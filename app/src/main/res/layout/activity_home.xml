@@ -6,47 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/Starter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="205dp"
+        android:text="Starter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/Homebutton"
-        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/middle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:rotation="91"
-        android:rotationX="360"
-        android:rotationY="-312"
-        android:stateListAnimator="@android:anim/bounce_interpolator"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="44dp"
+        android:text="Plat"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
+        app:layout_constraintTop_toBottomOf="@+id/Starter" />
+
+    <Button
+        android:id="@+id/dessert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Dessert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/middle" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SALUT COCHON"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="489dp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="234dp"
-        android:layout_height="211dp"
-        app:srcCompat="?android:attr/alertDialogIcon"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="442dp" />
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="16dp"
+        android:rotationX="33"
+        android:text="ANDROIDERESTAURANT"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
