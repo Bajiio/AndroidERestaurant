@@ -41,8 +41,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     fun ChangePage(Button: Button){
-        Toast.makeText(this,Button.text, Toast.LENGTH_SHORT).show()
-        Snackbar.make(Button,"Hello ISEN M1", Snackbar.LENGTH_SHORT).show()
         val intent= Intent(this, CategoryActivity::class.java)
         intent.putExtra("title", Button.text)
 

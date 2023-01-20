@@ -1,19 +1,23 @@
 package fr.isen.cousseau.androiderestaurant
 
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import android.widget.ImageView
+
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
+import fr.isen.cousseau.androiderestaurant.data.model.Category
+import fr.isen.cousseau.androiderestaurant.data.model.Plat
 
 
-/*data class Plats(val name: String, val price: String,val description: String, val categorie: String, val id: Int ) {
-}*/
 
-class CategoryAdapter(private val platsList: Array<String>, private val intentFun: (String) -> Unit): RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+class CategoryAdapter(private var platsList: Array<Plat>, private val intentFun: (Plat) -> Unit): RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         // inflates the card_view_design view
@@ -29,11 +33,17 @@ class CategoryAdapter(private val platsList: Array<String>, private val intentFu
         val ItemsViewModel = platsList[position]
 
         // sets the text to the textview from our itemHolder class
-        holder.textView.text = ItemsViewModel
-        Log.v("CategoryAdapter", "onBindViewHolder "+ holder.textView.text)
+        holder.textView.text = ItemsViewModel.name_fr
+        holder.price.text = ItemsViewModel.prices[0].price
+        if(ItemsViewModel.images[0]!= "")
+        {
+            Picasso.get().load(ItemsViewModel.images[0]).into(holder.imageView)
+        }
+
+        Log.v("URI_IMAGE", holder.imageView.toString())
 
         holder.cardLinear.setOnClickListener{
-            intentFun(holder.textView.text as String)
+            intentFun(ItemsViewModel)
         }
 
     }
@@ -42,9 +52,20 @@ class CategoryAdapter(private val platsList: Array<String>, private val intentFu
         return platsList.size
     }
 
+    fun updateData(filter: Category?) {
+        Log.i("DATA CATEGORY", filter.toString())
+        if (filter != null) {
+            platsList = filter.items
+        }
+        Log.i("UPDATED PLATS", platsList[0].toString())
+        notifyDataSetChanged()
+    }
+
     class CategoryViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val textView: TextView = itemView.findViewById(R.id.textView)
-        val cardLinear: LinearLayout= itemView.findViewById(R.id.CardLinear)
+        val cardLinear: ConstraintLayout= itemView.findViewById(R.id.CardLinear)
+        val price: TextView = itemView.findViewById(R.id.price)
+        val imageView: ImageView = itemView.findViewById(R.id.imageview)
     }
 }
 
