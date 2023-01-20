@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/imageview"
-            android:layout_width="94dp"
-            android:layout_height="67dp"
+            android:layout_width="95dp"
+            android:layout_height="68dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/price"
             app:layout_constraintHorizontal_bias="0.0"

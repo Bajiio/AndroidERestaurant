@@ -7,6 +7,15 @@
     tools:context=".DetailActivity">
 
     <TextView
+        android:id="@+id/DetailsPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        app:layout_constraintEnd_toEndOf="@+id/DetailsTitle"
+        app:layout_constraintStart_toStartOf="@+id/DetailsTitle"
+        app:layout_constraintTop_toBottomOf="@+id/DetailsTitle" />
+
+    <TextView
         android:id="@+id/DetailsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,5 +48,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/DetailsTitle"
         app:layout_constraintVertical_bias="0.093" />
+
+    <Button
+        android:id="@+id/DetailsPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        app:cornerRadius="150sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toEndOf="@+id/DetailsNumber"
+        app:layout_constraintTop_toTopOf="@+id/DetailsMinus" />
+
+    <Button
+        android:id="@+id/DetailsMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="-"
+        app:cornerRadius="150sp"
+        app:layout_constraintEnd_toStartOf="@+id/DetailsNumber"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DetailsDesc" />
+
+    <TextView
+        android:id="@+id/DetailsNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/DetailsMinus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/DetailsMinus" />
+
+    <Button
+        android:id="@+id/DetailsCart"
+        android:layout_width="221dp"
+        android:layout_height="48dp"
+        android:text="Total price 0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/DetailsPlus"
+        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintStart_toStartOf="@+id/DetailsMinus"
+        app:layout_constraintTop_toBottomOf="@+id/DetailsNumber"
+        app:layout_constraintVertical_bias="0.845" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
