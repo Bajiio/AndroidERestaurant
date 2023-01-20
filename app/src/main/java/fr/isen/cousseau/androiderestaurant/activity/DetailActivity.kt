@@ -46,7 +46,7 @@ class DetailActivity : AppCompatActivity() {
         price = plat.prices[0].price.toFloat()
         binding.DetailsPrice.text = price.toString() + "€"
         binding.DetailsNumber.text = cart.toString()
-
+        calculateCart()
 
         val viewPager = binding.DetailViewPager
         val adapter = DetailAdapter(plat.images)
